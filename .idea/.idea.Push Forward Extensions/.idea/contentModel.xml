@@ -32,13 +32,31 @@
           <e p="PlayerPrefsController.cs" t="Include" />
           <e p="PredicateTrigger.cs" t="Include" />
           <e p="SceneManagement.cs" t="Include" />
+          <e p="ScriptableObjects" t="Include">
+            <e p="Primitives" t="Include">
+              <e p="FloatReference.cs" t="Include" />
+              <e p="FloatVariable.cs" t="Include" />
+              <e p="IntReference.cs" t="Include" />
+              <e p="IntVariable.cs" t="Include" />
+              <e p="StringReference.cs" t="Include" />
+              <e p="StringVariable.cs" t="Include" />
+            </e>
+            <e p="Runtime" t="Include">
+              <e p="GameEvent.cs" t="Include" />
+              <e p="GameEventListener.cs" t="Include" />
+              <e p="RuntimeSet.cs" t="Include" />
+            </e>
+          </e>
           <e p="TriggerAt.cs" t="Include" />
         </e>
       </e>
+      <e p="Library" t="ExcludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />
       <e p="Push Forward Extensions.sln" t="IncludeFlat" />
-      <e p="Temp\bin" t="ExcludeRecursive" />
+      <e p="Temp" t="ExcludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+      </e>
     </e>
   </component>
 </project>
