@@ -88,7 +88,7 @@ namespace PushForward.Extenders
 		{
 			if (this.graphicToExtend != null)
 			{
-				this.ActionEveryFrameForSeconds(seconds =>
+				this.ActionEachFrameForSeconds(seconds =>
 												{
 													float fraction = seconds / secondsToFade;
 													if (this.fadeColour)
@@ -106,7 +106,7 @@ namespace PushForward.Extenders
 		{
 			if (this.graphicToExtend != null)
 			{
-				this.ActionEveryFrameForSeconds(seconds =>
+				this.ActionEachFrameForSeconds(seconds =>
 												{
 													float fraction = seconds / secondsToFade;
 													if (this.fadeColour)

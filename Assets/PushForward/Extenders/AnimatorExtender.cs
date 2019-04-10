@@ -4,19 +4,33 @@
 	Description: Extends the Animator class.
 
 	Created by: Eran "Sabre Runner" Arbel.
-	Last Updated: 2018-08-27
+	Last Updated: 2018-11-21
 */
 
 namespace PushForward.Extenders
 {
+	#region using
 	using System;
 	using UnityEngine;
 	using UnityEngine.Events;
 	using PushForward.ExtensionMethods;
+	#endregion // using
 
+	[RequireComponent(typeof(Animator))]
 	public class AnimatorExtender : BaseMonoBehaviour
 	{
-		[SerializeField] Animator animator;
+		#region Inspector Fields
+		[SerializeField] private Animator animator;
+		#endregion // inspector fields
+
+		#region Properties
+		int CurrentStateHash => this.animator.GetCurrentAnimatorStateInfo(0).shortNameHash;
+		float CurrentStateNormalisedTime => this.animator.GetCurrentAnimatorStateInfo(0).normalizedTime;
+		#endregion // properties
+
+		#region Private Fields
+		private float savedSpeed;
+		#endregion // private fields
 
 		#region animation events
 		/// <summary>A description of an animation event.</summary>
@@ -42,6 +56,29 @@ namespace PushForward.Extenders
 			this.animationEventArray[eventNumber].Invoke();
 		}
 		#endregion // animation events
+
+		#region Speed Control
+		public void ZeroSpeed()
+		{
+			this.savedSpeed = this.animator.speed;
+			this.animator.speed = 0;
+		}
+		public void NormalSpeed()
+		{
+			this.savedSpeed = this.animator.speed;
+			this.animator.speed = 1;
+		}
+		public void ResumeSpeed()
+		{
+			this.animator.speed = this.savedSpeed;
+		}
+		#endregion // speed control
+
+		public void SeekAnimation(float normalisedTime)
+		{
+			this.animator.Play(this.CurrentStateHash, 0, normalisedTime);
+			this.animator.speed = 0;
+		}
 
 		#region engine
 		private void OnValidate()

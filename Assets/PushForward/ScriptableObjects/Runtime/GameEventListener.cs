@@ -1,20 +1,20 @@
-﻿namespace PushForward.ScriptableObjects
+namespace PushForward.ScriptableObjects.Runtime
 {
-    using UnityEngine;
+	using UnityEngine;
     using UnityEngine.Events;
-
-    public class GameEventListener : MonoBehaviour
+	
+	/// <summary>The basic game event listener.
+	///		Holds the basic empty game event.</summary>
+	public class GameEventListener : GameEventListenerBase
     {
-        public GameEvent gameEvent;
-        public UnityEvent eventResponse;
+		/// <summary>The actual game event.</summary>
+        [SerializeField] private GameEvent gameEvent;
+		protected override GameEvent GameEvent => this.gameEvent;
+		/// <summary>The event response event is unique to every listener.</summary>
+		[SerializeField] private UnityEvent eventResponse;
 
-        private void OnEnable()
-        { this.gameEvent.RegisterListener(this); }
-
-        private void OnDisable()
-        { this.gameEvent.UnregisterListener(this); }
-        
-        public void OnEventRaised()
+		/// <summary>Overriding for the basic listener is just a simple event.</summary>
+        protected override void OnEventRaised()
         { this.eventResponse.Invoke(); }
     }
 }

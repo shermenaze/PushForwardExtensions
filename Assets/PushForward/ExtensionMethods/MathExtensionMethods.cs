@@ -5,7 +5,7 @@
  *
  * Created by: Eran "Sabre Runner" Arbel.
  *
- * Last Updated: 2018-01-20
+ * Last Updated: 2018-11-15
 */
 
 namespace PushForward.ExtensionMethods
@@ -18,6 +18,17 @@ namespace PushForward.ExtensionMethods
 	public static class MathExtensionMethods
 	{
 		public const float EPSILON = 0.000008f;
+
+		#region max
+		/// <summary>Maximum function for TimeSpan.</summary>
+		/// <param name="timeSpan">First TimeSpan</param>
+		/// <param name="other">Second TimeSpan</param>
+		/// <returns>Biggest of the two.</returns>
+		public static TimeSpan Max(this TimeSpan timeSpan, TimeSpan other)
+		{ return timeSpan.Ticks > other.Ticks ? timeSpan : other; }
+		public static TimeSpan Max(this TimeSpan timeSpan, double milliseconds)
+		{ return timeSpan.TotalMilliseconds > milliseconds ? timeSpan : TimeSpan.FromMilliseconds(milliseconds); }
+		#endregion // max
 
 		#region between
 		public static bool Between(this int number, int low, int high, bool inclusive = true)
@@ -84,6 +95,21 @@ namespace PushForward.ExtensionMethods
 			return Mathf.Clamp(value, min, max);
 		}
 
+		/// <summary>Clamp an long to min and max.</summary>
+		/// <param name="value">The number to clamp.</param>
+		/// <param name="min">Minimum value.</param>
+		/// <param name="max">Maximum value</param>
+		/// <returns>The clamped number.</returns>
+		public static long Clamp(this long value, long min, long max)
+		{
+			if (value > max)
+			{ value = max; }
+			else if (value < min)
+			{ value = min; }
+
+			return value;
+		}
+
 		/// <summary>Clamp a float to min and max.</summary>
 		/// <param name="value">The number to clamp.</param>
 		/// <param name="min">Minimum value.</param>
@@ -94,6 +120,20 @@ namespace PushForward.ExtensionMethods
 			return Mathf.Clamp(value, min, max);
 		}
 
+		/// <summary>Clamp a double to min and max.</summary>
+		/// <param name="value">The number to clamp.</param>
+		/// <param name="min">Minimum value.</param>
+		/// <param name="max">Maximum value</param>
+		/// <returns>The clamped number.</returns>
+		public static double Clamp(this double value, double min, double max)
+		{
+			if (value > max)
+			{ value = max; }
+			else if (value < min)
+			{ value = min; }
+			return value;
+		}
+
 		/// <summary>Clamp a float to 0 and 1.</summary>
 		/// <param name="value">The number to clamp.</param>
 		/// <returns>The clamped number.</returns>
@@ -101,6 +141,12 @@ namespace PushForward.ExtensionMethods
 		{
 			return Mathf.Clamp01(value);
 		}
+
+		/// <summary>Clamp a double to 0 and 1.</summary>
+		/// <param name="value">The number to clamp.</param>
+		/// <returns>The clamped number.</returns>
+		public static double Clamp01(this double value)
+		{ return value.Clamp(0, 1); }
 
 		/// <summary>Clamp a Vector2 to min and max</summary>
 		/// <param name="value">The Vector2 to clamp.</param>

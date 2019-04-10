@@ -189,7 +189,7 @@ public class BaseMonoBehaviour : MonoBehaviour
 	///		The parameter will be the amount of seconds already passed since the start frame.</summary>
 	/// <param name="actionToCall">The action to call every frame with the seconds count.</param>
 	/// <param name="amountOfSecondsToTake">The time frame in which to call the action every frame.</param>
-	protected Coroutine ActionEveryFrameForSeconds(Action<float> actionToCall, float amountOfSecondsToTake)
+	protected Coroutine ActionEachFrameForSeconds(Action<float> actionToCall, float amountOfSecondsToTake)
 	{ return this.ActiveInHierarchy ? this.StartCoroutine(this.ActionEveryFrameForSecondsCoroutine(actionToCall, amountOfSecondsToTake)) : null; }
 	private IEnumerator ActionInSecondsCoroutine(Action actionToStart, float secondsToWait)
 	{

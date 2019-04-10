@@ -20,6 +20,7 @@
             <e p="GraphicExtender.cs" t="Include" />
             <e p="TextExtender.cs" t="Include" />
             <e p="TransformExtender.cs" t="Include" />
+            <e p="VideoPlayerExtender.cs" t="Include" />
           </e>
           <e p="ExtensionMethods" t="Include">
             <e p="EnumerableExtensionMethods.cs" t="Include" />
@@ -28,9 +29,12 @@
             <e p="UIExtensionMethods.cs" t="Include" />
             <e p="UnityEngineExtensionMethods.cs" t="Include" />
           </e>
+          <e p="GenericInstantiator.cs" t="Include" />
+          <e p="NoteTaker.cs" t="Include" />
           <e p="OrientationInvoker.cs" t="Include" />
           <e p="PlayerPrefsController.cs" t="Include" />
           <e p="PredicateTrigger.cs" t="Include" />
+          <e p="RaycastHitter.cs" t="Include" />
           <e p="SceneManagement.cs" t="Include" />
           <e p="ScriptableObjects" t="Include">
             <e p="Primitives" t="Include">
@@ -43,10 +47,14 @@
             </e>
             <e p="Runtime" t="Include">
               <e p="GameEvent.cs" t="Include" />
+              <e p="GameEventInt.cs" t="Include" />
+              <e p="GameEventIntListener.cs" t="Include" />
               <e p="GameEventListener.cs" t="Include" />
+              <e p="GameEventListenerBase.cs" t="Include" />
               <e p="RuntimeSet.cs" t="Include" />
             </e>
           </e>
+          <e p="Timer.cs" t="Include" />
           <e p="TriggerAt.cs" t="Include" />
         </e>
       </e>

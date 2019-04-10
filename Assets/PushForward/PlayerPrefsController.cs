@@ -18,8 +18,7 @@ namespace PushForward
 			public ExecutionOrder whenToRunThis;
 			public string key;
 
-			public void Invoke(UnityEvent existsEvent, UnityEvents.StringEvent stringEvent,
-							   UnityEvents.IntEvent intEvent, UnityEvents.FloatEvent floatEvent)
+			public void Invoke(UnityEvent existsEvent, StringEvent stringEvent, IntEvent intEvent, FloatEvent floatEvent)
 			{
 				if (this.key.IsNullOrEmpty())
 				{ return; }
@@ -65,9 +64,9 @@ namespace PushForward
 		[SerializeField] private PlayerPrefsInvoke playerPrefsInvoker;
 		[SerializeField] private PlayerPrefsSaver playerPrefsSaver;
 		[SerializeField] private UnityEvent existsEvent;
-		[SerializeField] private UnityEvents.StringEvent stringEvent;
-		[SerializeField] private UnityEvents.IntEvent intEvent;
-		[SerializeField] private UnityEvents.FloatEvent floatEvent;
+		[SerializeField] private StringEvent stringEvent;
+		[SerializeField] private IntEvent intEvent;
+		[SerializeField] private FloatEvent floatEvent;
 		#endregion // fields
 
 		#region invoke

@@ -170,4 +170,9 @@ public static class EnumerableExtensionMethods
 		string n = $"N{decimalAccuracy}";
 		return $"({vec2.x.ToString(n)}, {vec2.y.ToString(n)})";
 	}
+
+	public static string StringRepresentation(this Quaternion quat, int decimalAccuracy = 4)
+	{
+		return quat.eulerAngles.StringRepresentation(decimalAccuracy);
+	}
 }
