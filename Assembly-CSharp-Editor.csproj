@@ -9,10 +9,10 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{7D791F22-2FA8-498C-23B0-DBD439F0D18D}</ProjectGuid>
+    <ProjectGuid>{5D3F90C7-35B6-D199-DCE6-B82DD44DC07C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
@@ -53,43 +53,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\PushForward\ApplicationPublicAccess.cs" />
-     <Compile Include="Assets\PushForward\Base\BaseMonoBehaviour.cs" />
-     <Compile Include="Assets\PushForward\Base\MouseInputModule.cs" />
-     <Compile Include="Assets\PushForward\Base\Singleton.cs" />
-     <Compile Include="Assets\PushForward\Base\SingletonBehaviour.cs" />
-     <Compile Include="Assets\PushForward\Base\UnityEvents.cs" />
-     <Compile Include="Assets\PushForward\Extenders\AnimatorExtender.cs" />
-     <Compile Include="Assets\PushForward\Extenders\GraphicExtender.cs" />
-     <Compile Include="Assets\PushForward\Extenders\TextExtender.cs" />
-     <Compile Include="Assets\PushForward\Extenders\TransformExtender.cs" />
-     <Compile Include="Assets\PushForward\Extenders\VideoPlayerExtender.cs" />
-     <Compile Include="Assets\PushForward\ExtensionMethods\EnumerableExtensionMethods.cs" />
-     <Compile Include="Assets\PushForward\ExtensionMethods\MathExtensionMethods.cs" />
-     <Compile Include="Assets\PushForward\ExtensionMethods\TextExtensionMethods.cs" />
-     <Compile Include="Assets\PushForward\ExtensionMethods\UIExtensionMethods.cs" />
-     <Compile Include="Assets\PushForward\ExtensionMethods\UnityEngineExtensionMethods.cs" />
-     <Compile Include="Assets\PushForward\GenericInstantiator.cs" />
-     <Compile Include="Assets\PushForward\NoteTaker.cs" />
-     <Compile Include="Assets\PushForward\OrientationInvoker.cs" />
-     <Compile Include="Assets\PushForward\PlayerPrefsController.cs" />
-     <Compile Include="Assets\PushForward\PredicateTrigger.cs" />
-     <Compile Include="Assets\PushForward\RaycastHitter.cs" />
-     <Compile Include="Assets\PushForward\SceneManagement.cs" />
-     <Compile Include="Assets\PushForward\ScriptableObjects\Primitives\FloatReference.cs" />
-     <Compile Include="Assets\PushForward\ScriptableObjects\Primitives\FloatVariable.cs" />
-     <Compile Include="Assets\PushForward\ScriptableObjects\Primitives\IntReference.cs" />
-     <Compile Include="Assets\PushForward\ScriptableObjects\Primitives\IntVariable.cs" />
-     <Compile Include="Assets\PushForward\ScriptableObjects\Primitives\StringReference.cs" />
-     <Compile Include="Assets\PushForward\ScriptableObjects\Primitives\StringVariable.cs" />
-     <Compile Include="Assets\PushForward\ScriptableObjects\Runtime\GameEvent.cs" />
-     <Compile Include="Assets\PushForward\ScriptableObjects\Runtime\GameEventInt.cs" />
-     <Compile Include="Assets\PushForward\ScriptableObjects\Runtime\GameEventIntListener.cs" />
-     <Compile Include="Assets\PushForward\ScriptableObjects\Runtime\GameEventListener.cs" />
-     <Compile Include="Assets\PushForward\ScriptableObjects\Runtime\GameEventListenerBase.cs" />
-     <Compile Include="Assets\PushForward\ScriptableObjects\Runtime\RuntimeSet.cs" />
-     <Compile Include="Assets\PushForward\Timer.cs" />
-     <Compile Include="Assets\PushForward\TriggerAt.cs" />
+     <Compile Include="Assets\PushForward\Editor\BaseMonoBehaviourEditor.cs" />
+     <Compile Include="Assets\PushForward\Editor\EditorSceneMemoryManager.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/Sabre Runner/Projects/Push Forward Extensions/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
@@ -321,6 +286,27 @@
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.0a14/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
+ <Reference Include="UnityEditor.UI">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.0a14/Editor/Data/UnityExtensions/Unity/GUISystem/Editor/UnityEditor.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.VR">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.0a14/Editor/Data/UnityExtensions/Unity/UnityVR/Editor/UnityEditor.VR.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Graphs">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.0a14/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.WindowsStandalone.Extensions">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.0a14/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.WebGL.Extensions">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.0a14/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Android.Extensions">
+ <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.0a14/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Advertisements">
+ <HintPath>C:/Users/Sabre Runner/Projects/Push Forward Extensions/Library/PackageCache/com.unity.ads@2.3.1/Editor/UnityEditor.Advertisements.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.Advertisements">
  <HintPath>C:/Users/Sabre Runner/Projects/Push Forward Extensions/Library/PackageCache/com.unity.ads@2.3.1/Runtime/UnityEngine.Advertisements.dll</HintPath>
  </Reference>
@@ -335,6 +321,9 @@
  </Reference>
  <Reference Include="Unity.Analytics.Tracker">
  <HintPath>C:/Users/Sabre Runner/Projects/Push Forward Extensions/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Purchasing">
+ <HintPath>C:/Users/Sabre Runner/Projects/Push Forward Extensions/Library/PackageCache/com.unity.purchasing@2.0.6/Editor/UnityEditor.Purchasing.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.0a14/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -690,6 +679,12 @@
  <Reference Include="Boo.Lang">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.0a14/Editor/Data/MonoBleedingEdge/lib/mono/unityscript/Boo.Lang.dll</HintPath>
  </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp.csproj">
+      <Project>{7D791F22-2FA8-498C-23B0-DBD439F0D18D}</Project>
+      <Name>Assembly-CSharp</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

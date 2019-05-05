@@ -4,6 +4,7 @@
     <e p="C:\Users\Sabre Runner\.Rider2018.2\system\extResources" t="IncludeRecursive" />
     <e p="C:\Users\Sabre Runner\.Rider2018.2\system\resharper-host\local\Transient\ReSharperHost\v182\SolutionCaches\_Push Forward Extensions.1843255712.00" t="ExcludeRecursive" />
     <e p="C:\Users\Sabre Runner\Projects\Push Forward Extensions" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="PushForward" t="Include">
@@ -14,6 +15,10 @@
             <e p="Singleton.cs" t="Include" />
             <e p="SingletonBehaviour.cs" t="Include" />
             <e p="UnityEvents.cs" t="Include" />
+          </e>
+          <e p="Editor" t="Include">
+            <e p="BaseMonoBehaviourEditor.cs" t="Include" />
+            <e p="EditorSceneMemoryManager.cs" t="Include" />
           </e>
           <e p="Extenders" t="Include">
             <e p="AnimatorExtender.cs" t="Include" />

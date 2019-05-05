@@ -4,13 +4,14 @@
 	Description: A wrapper class for Unity Engine's MonoBehaviour class to add additional functionality at this level.
 				 All new behaviours should inherit from this class.
 	Created by: Eran "Sabre Runner" Arbel.
-	Last Updated: 2018-08-12
+	Last Updated: 2019-05-05 - Memory optimisations
 */
 
 #region using
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Text;
 using UnityEngine;
 using Object = UnityEngine.Object;
@@ -261,6 +262,55 @@ public class BaseMonoBehaviour : MonoBehaviour
 		return null;
 	}
 	#endregion
+
+	#region engine
+	// public bool canMove;
+	/// <summary>Use this instead of validate to make sure it runs only in the Editor.</summary>
+	public virtual bool OnValidateProperty(string propertyName)
+	{
+		return false;
+
+		// if (propertyName == "canMove")
+		// {
+		//  	if (!m_CanMove)
+		// 		{
+		// 			GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+		// 			return true;
+		// 		}
+		// }
+		//
+		// return base.OnValidateProperty(propertyName);
+	}
+
+	/// <summary>Make sure the GC knows to collect all the referenced objects.</summary>
+	private void ClearReferenceFields()
+	{
+		foreach (FieldInfo field in this.GetType().GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance))
+		{
+			Type fieldType = field.FieldType;
+
+			if (typeof(IList).IsAssignableFrom(fieldType))
+			{
+				IList list = field.GetValue(this) as IList;
+				list?.Clear();
+			}
+
+			if (typeof(IDictionary).IsAssignableFrom(fieldType))
+			{
+				IDictionary dictionary = field.GetValue(this) as IDictionary;
+				dictionary?.Clear();
+			}
+
+			if (!fieldType.IsPrimitive)
+			{ field.SetValue(this, null); }
+		}
+	}
+
+	private void OnDestroy()
+	{
+		this.ClearReferenceFields();
+	}
+	#endregion // engine
 
 	public string CurrentFullTimeIn24Hours(char dateDelimiter = '-', char timeDelimiter = ';',
 											char milisecondsDelimiter = ',')

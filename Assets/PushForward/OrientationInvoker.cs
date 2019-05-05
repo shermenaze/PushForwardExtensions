@@ -16,10 +16,8 @@ namespace PushForward
 	public class OrientationInvoker : BaseMonoBehaviour
 	{
 		#region fields
-#pragma warning disable IDE0044 // Add readonly modifier
 		[SerializeField] private UnityEvent onLandscape;
 		[SerializeField] private UnityEvent onPortrait;
-#pragma warning restore IDE0044 // Add readonly modifier
 
 		private DeviceOrientation lastOrientation = DeviceOrientation.Unknown;
 		#endregion
