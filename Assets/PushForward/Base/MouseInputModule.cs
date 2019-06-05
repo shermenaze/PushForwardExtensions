@@ -7,10 +7,8 @@ namespace PushForward.Base
 	public class MouseInputModule : BaseMonoBehaviour//, IBeginDragHandler, IEndDragHandler
 	{
 		#region fields
-#pragma warning disable IDE0044 // Add readonly modifier
 		[Range(10f, 1000f)] [SerializeField] private float swipeThreshold;
 		[SerializeField] private Vector2Event swipeEvent;
-#pragma warning restore IDE0044 // Add readonly modifier
 
 		private Vector3 mouseDragStartPosition = -Vector2.one;
 		#endregion // fields

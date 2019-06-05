@@ -5,6 +5,7 @@ namespace PushForward
 
 	public class GenericInstantiator : BaseMonoBehaviour
 	{
+		// ReSharper disable once MemberCanBePrivate.Global
 		public enum Lineage { Child, Sibling, Parent, Root }
 
 		#pragma warning disable IDE0044 // Add readonly modifier

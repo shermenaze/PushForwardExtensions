@@ -9,6 +9,7 @@ namespace PushForward.ScriptableObjects.Runtime
     {
 		/// <summary>The actual game event.</summary>
         [SerializeField] private GameEvent gameEvent;
+		// ReSharper disable once ConvertToAutoProperty
 		protected override GameEvent GameEvent => this.gameEvent;
 		/// <summary>The event response event is unique to every listener.</summary>
 		[SerializeField] private UnityEvent eventResponse;

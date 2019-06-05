@@ -15,7 +15,6 @@ namespace PushForward
 
 	public class RaycastHitter : BaseMonoBehaviour
 	{
-		#pragma warning disable IDE0044 // Add readonly modifier
 		[Tooltip("How far to draw the ray.")]
 		[SerializeField] private float maxDistance = 10f;
 		[Header("Return Info on Raycast Hit.")]
@@ -24,7 +23,6 @@ namespace PushForward
 		[SerializeField] private FloatEvent hitDistanceEvent;
 		[SerializeField] private Vector3Event hitWorldPositionEvent;
 		[SerializeField] private StringEvent hitInfoStringEvent;
-		#pragma warning restore IDE0044 // Add readonly modifier
 
 		public void Raycast()
 		{
