@@ -3,14 +3,18 @@ namespace PushForward
 {
 	using UnityEngine;
 	using UnityEngine.Events;
-	using PushForward.ExtensionMethods;
-	using PushForward.ScriptableObjects.Primitives;
+	using ExtensionMethods;
+	using ScriptableObjects.Primitives;
 
 	public class TriggerAt : BaseMonoBehaviour
 	{
-		public enum TriggerPoint { Never = 0, Awake, Start, Enabled, Disabled, Destroyed, Update }
-		public enum TriggerPlatform { All = 0, Standalone, Android, iOS }
+		#region enums
+		private enum TriggerPoint { Never = 0, Awake, Start, Enabled, Disabled, Destroyed, Update }
 
+		private enum TriggerPlatform { All = 0, Standalone, Android, iOS }
+		#endregion //enums
+
+		#region fields
 #pragma warning disable IDE0044 // Add readonly modifier
 		[SerializeField] private TriggerPoint triggerPoint;
 		[SerializeField] private TriggerPlatform triggerPlatform;
@@ -20,6 +24,7 @@ namespace PushForward
 #endif
 		[SerializeField] private UnityEvent triggerEvent;
 #pragma warning restore IDE0044 // Add readonly modifier
+		#endregion //fields
 
 		[ContextMenu("Trigger")]
 		public void Trigger()
