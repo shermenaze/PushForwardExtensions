@@ -106,6 +106,14 @@ namespace PushForward
 			this.timerActions = timerActions;
 			this.timerOverActions = timerOverActions;
 		}
+
+		/// <summary>Reset the timer to the given time span.</summary>
+		/// <param name="timerSpan">The new time to set.</param>
+		public void ResetTime(TimeSpan timerSpan)
+		{
+			this.PauseTimer();
+			this.time = timerSpan;
+		}
 		#endregion // setup
 
 		#region Timer
