@@ -33,5 +33,10 @@ namespace PushForward
 			newObject.transform.localRotation *= Quaternion.Euler(this.rotationOffset)
 													* (newObject.transform.parent == null ? this.transform.rotation : Quaternion.identity);
 		}
+		
+		public void SetPrefab(GameObject newPrefab)
+		{
+			this.prefab = newPrefab;
+		}
 	}
 }
