@@ -87,6 +87,8 @@
     <Compile Include="Assets\PushForward\ScriptableObjects\Primitives\FloatVariable.cs" />
     <Compile Include="Assets\PushForward\ScriptableObjects\Primitives\IntReference.cs" />
     <Compile Include="Assets\PushForward\ScriptableObjects\Primitives\IntVariable.cs" />
+    <Compile Include="Assets\PushForward\ScriptableObjects\Primitives\PrefabReference.cs" />
+    <Compile Include="Assets\PushForward\ScriptableObjects\Primitives\PrefabVariable.cs" />
     <Compile Include="Assets\PushForward\ScriptableObjects\Primitives\StringReference.cs" />
     <Compile Include="Assets\PushForward\ScriptableObjects\Primitives\StringVariable.cs" />
     <Compile Include="Assets\PushForward\ScriptableObjects\Runtime\GameEvent.cs" />
@@ -96,6 +98,8 @@
     <Compile Include="Assets\PushForward\ScriptableObjects\Runtime\GameEventIntListener.cs" />
     <Compile Include="Assets\PushForward\ScriptableObjects\Runtime\GameEventListener.cs" />
     <Compile Include="Assets\PushForward\ScriptableObjects\Runtime\GameEventListenerBase.cs" />
+    <Compile Include="Assets\PushForward\ScriptableObjects\Runtime\GameEventPrefab.cs" />
+    <Compile Include="Assets\PushForward\ScriptableObjects\Runtime\GameEventPrefabListener.cs" />
     <Compile Include="Assets\PushForward\ScriptableObjects\Runtime\RuntimeSet.cs" />
     <Compile Include="Assets\PushForward\Timer.cs" />
     <Compile Include="Assets\PushForward\TriggerAt.cs" />

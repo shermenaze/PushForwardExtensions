@@ -1,7 +1,7 @@
 namespace PushForward.ScriptableObjects.Runtime
 {
 	using UnityEngine;
-	using PushForward.Base;
+	using Base;
 
     public class GameEventIntListener : GameEventListenerBase
     {

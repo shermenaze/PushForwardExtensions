@@ -18,7 +18,7 @@ namespace PushForward
 		[SerializeField] private GameObject[] objectsToDeactivateOnUnload;
 		[Tooltip("Set the objects to activate on unload.")]
 		[SerializeField] private GameObject[] objectsToActivateOnUnload;
-
+		
 		public void SetActiveObjectsOnLoad()
 		{
 			this.objectsToDeactivateOnLoad.DoForEach(go => go.Deactivate());
