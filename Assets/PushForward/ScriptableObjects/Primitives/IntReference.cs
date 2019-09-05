@@ -1,6 +1,4 @@
-﻿
-using PushForward.ScriptableObjects.Runtime;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace PushForward.ScriptableObjects.Primitives
 {
