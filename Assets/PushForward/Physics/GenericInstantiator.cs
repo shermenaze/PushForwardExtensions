@@ -19,7 +19,9 @@ namespace PushForward
 		[SerializeField] private Vector3 rotationOffset = Vector3.zero;
 		#pragma warning restore IDE0044 // Add readonly modifier
 
-		public void Instantiate()
+		/// <summary>Instantiates set prefab by parameters and returns it</summary>
+		/// <returns>Reference to instantiated prefab.</returns>
+		public GameObject Instantiate()
 		{
 			// instantiate according to lineage
 			GameObject newObject = Instantiate(this.prefab,
@@ -32,6 +34,7 @@ namespace PushForward
 													+ (newObject.transform.parent == null ? this.transform.position : Vector3.zero);
 			newObject.transform.localRotation *= Quaternion.Euler(this.rotationOffset)
 													* (newObject.transform.parent == null ? this.transform.rotation : Quaternion.identity);
+			return newObject;
 		}
 		
 		public void SetPrefab(GameObject newPrefab)

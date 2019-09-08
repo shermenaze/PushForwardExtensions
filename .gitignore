@@ -3,6 +3,7 @@
 /Library/
 /Temp/
 /obj/
+/.idea/
 
 # User-specific stuff
 .idea/**/workspace.xml
@@ -10,6 +11,7 @@
 .idea/**/usage.statistics.xml
 .idea/**/dictionaries
 .idea/**/shelf
+.idea/**/indexLayout.xml
 
 # Generated files
 .idea/**/contentModel.xml
@@ -28,6 +30,5 @@
 .idea/**/libraries
 
 # Specifics
-/.idea/.idea.PushForwardExtensions/.idea/contentModel.xml
 /Assets/Plugins/Editor/JetBrains/
 /Assets/Plugins/Editor/JetBrains.meta
