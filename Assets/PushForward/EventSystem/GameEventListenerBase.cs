@@ -17,7 +17,10 @@ namespace PushForward.EventSystem
 		{ this.GameEvent?.RegisterListener(this); }
 
 		private void OnDisable()
-		{ this.GameEvent?.UnregisterListener(this); }
+		{
+			if (!this.respondWhenDisabled)
+			{ this.GameEvent?.UnregisterListener(this); }
+		}
 
 		/// <summary>Responds to the event being raised.
 		///		An abstract method allows each derived listener to do it differently.
