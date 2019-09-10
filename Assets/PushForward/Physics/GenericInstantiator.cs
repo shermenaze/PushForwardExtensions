@@ -8,6 +8,7 @@ namespace PushForward
 		// ReSharper disable once MemberCanBePrivate.Global
 		public enum Lineage { Child, Sibling, Parent, Root }
 
+		#region inspector fields
 		#pragma warning disable IDE0044 // Add readonly modifier
 		[Tooltip("The Prefab to instantiate.")]
 		[SerializeField] private GameObject prefab;
@@ -18,6 +19,13 @@ namespace PushForward
 		[Tooltip("What is the rotation offset to add?")]
 		[SerializeField] private Vector3 rotationOffset = Vector3.zero;
 		#pragma warning restore IDE0044 // Add readonly modifier
+		#endregion // inspector fields
+
+		public GameObject Prefab
+		{
+			get => this.prefab;
+			set => this.prefab = value;
+		}
 
 		/// <summary>Instantiates set prefab by parameters and returns it</summary>
 		/// <returns>Reference to instantiated prefab.</returns>
@@ -36,10 +44,24 @@ namespace PushForward
 													* (newObject.transform.parent == null ? this.transform.rotation : Quaternion.identity);
 			return newObject;
 		}
-		
-		public void SetPrefab(GameObject newPrefab)
+
+		public void InstantiateStatic()
 		{
-			this.prefab = newPrefab;
+			this.Instantiate();
+		}
+		
+		public GameObject InstantiateOtherDontReplace(GameObject otherPrefab)
+		{
+			GameObject tempSave = this.Prefab;
+			this.Prefab = otherPrefab;
+			GameObject instantiated = this.Instantiate();
+			this.Prefab = tempSave;
+			return instantiated;
+		}
+
+		public void InstantiateOtherDontReplaceStatic(GameObject otherPrefab)
+		{
+			this.InstantiateOtherDontReplace(otherPrefab);
 		}
 	}
 }
