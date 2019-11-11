@@ -31,6 +31,9 @@ namespace PushForward
 		/// <returns>Reference to instantiated prefab.</returns>
 		public GameObject Instantiate()
 		{
+			if (this.Prefab == null)
+			{ return null; }
+			
 			// instantiate according to lineage
 			GameObject newObject = Instantiate(this.prefab,
 											   this.lineage == Lineage.Child ? this.transform

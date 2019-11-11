@@ -56,6 +56,13 @@ namespace PushForward.ExtensionMethods
 		{
 			return inclusive ? number >= low && number <= high : number > low && number < high;
 		}
+
+		public static bool Between(this Vector2 vector, Vector2 low, Vector2 high, bool inclusive = true)
+		{
+			return inclusive
+						? vector.x >= low.x && vector.x <= high.x && vector.y >= low.y && vector.y <= high.y
+							: vector.x > low.x && vector.x < high.x && vector.y > low.y && vector.y < high.y;
+		}
 		#endregion
 
 		#region round

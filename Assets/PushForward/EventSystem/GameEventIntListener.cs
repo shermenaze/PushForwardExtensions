@@ -1,4 +1,6 @@
 
+using UnityEngine.Events;
+
 namespace PushForward.EventSystem
 {
 	using Base;
@@ -10,9 +12,19 @@ namespace PushForward.EventSystem
 		[SerializeField] private GameEventInt gameEventInt;
 		protected override GameEvent GameEvent => this.gameEventInt;
 		/// <summary>This listener's event gets an integer.</summary>
-		[SerializeField] private IntEvent intResponse;
+		public IntEvent intResponse;
+		/// <summary>Activate event with int as index.</summary>
+		public UnityEvent[] intAsIndexResponse;
 
 		protected override void OnEventRaised()
-		{ this.intResponse?.Invoke(this.gameEventInt.integer); }
+		{
+			this.intResponse?.Invoke(this.gameEventInt.integer);
+			
+			if (this.intAsIndexResponse != null
+			    && this.gameEventInt.integer < this.intAsIndexResponse.Length
+			    && this.gameEventInt.integer >= 0
+			    && this.intAsIndexResponse[this.gameEventInt.integer] != null)
+			{ this.intAsIndexResponse[this.gameEventInt.integer].Invoke(); }
+		}
 	}
 }
